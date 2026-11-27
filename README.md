@@ -47,6 +47,19 @@ Only analyze flow summaries you are allowed to use, and remove identifying detai
 5. Discuss evaluation metrics: precision, recall, F1, false-positive rate, and alert volume.
 6. Cover limitations and next steps: false alarms, traffic drift, baseline quality, privacy, and analyst review.
 
+## Sample demo outcome
+
+The seeded synthetic run scored **18 flows** and generated **4 alert records**. See [the alert output](alerts.json) and [the synthetic flow input](demo_flows.csv).
+
+Flagged examples:
+
+- `M001` — unusual packet count.
+- `M014` — high bytes sent, packet count, and destination port.
+- `M015` — unusual duration, bytes sent, packet count, and destination port.
+- `M016` — unusual duration, bytes sent, and packet count.
+
+These are intentionally unusual synthetic examples, not real attacks or measured real-world performance.
+
 ## Important limits
 
 An anomaly alert is a signal to investigate, not proof of an attack. An unsupervised approach may flag previously unseen behavior, but it cannot guarantee detection of every zero-day. Subtle attacks may look normal, and normal traffic changes can create false positives. Synthetic demo results are not real-world performance claims.
