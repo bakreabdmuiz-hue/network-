@@ -6,15 +6,15 @@ A student project demo that combines **unsupervised machine learning** and **rob
 
 Install Python 3.10 or newer, then open PowerShell:
 
-\`\`\`powershell
+```powershell
 git clone https://github.com/bakreabdmuiz-hue/network-.git
 cd network-
 py -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 .\.venv\Scripts\python.exe detector.py --demo
-\`\`\`
+```
 
-The demo creates \`demo_flows.csv\` and \`alerts.json\`, then prints any alerts it found. The dependencies, including NumPy and scikit-learn, are installed from \`requirements.txt\`.
+The demo creates `demo_flows.csv` and `alerts.json`, then prints any alerts it found. The dependencies, including NumPy and scikit-learn, are installed from `requirements.txt`.
 
 ## How detection works
 
@@ -26,15 +26,15 @@ The demo generates synthetic baseline and observation flows. For your own data, 
 
 Required CSV columns:
 
-\`\`\`text
+```text
 flow_id,timestamp,duration_ms,bytes_sent,bytes_received,packets,destination_port,protocol
-\`\`\`
+```
 
 Run the detector with:
 
-\`\`\`powershell
+```powershell
 python detector.py --baseline baseline.csv --input new_flows.csv --output alerts.json
-\`\`\`
+```
 
 Only analyze flow summaries you are allowed to use, and remove identifying details before sharing data. The project does not inspect packet payloads.
 
