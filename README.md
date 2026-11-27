@@ -58,7 +58,7 @@ Flagged examples:
 - `M015` — unusual duration, bytes sent, packet count, and destination port.
 - `M016` — unusual duration, bytes sent, and packet count.
 
-These are intentionally unusual synthetic examples, not real attacks or measured real-world performance.
+M001 comes from the ordinary synthetic stream and is a useful possible false-positive example; M014–M016 were deliberately injected outliers. These are synthetic examples, not real attacks or measured real-world performance.
 
 ## Important limits
 
