@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A demo network intrusion detection dashboard powered by machine learning.">
+<title>Sentinel ML — Network Defense</title>
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <a class="brand" href="#overview"><span class="brand-mark">S</span><span>sentinel<span class="brand-light">.ml</span><small>NETWORK DEFENSE</small></span></a>
+    <div class="workspace-label">WORKSPACE</div><div class="workspace"><span class="workspace-dot"></span> Acme Security <span class="chevron">⌄</span></div>
+    <nav aria-label="Main navigation">
+      <a class="nav-link active" href="#overview"><span>▦</span> Overview</a>
+      <a class="nav-link" href="#alerts"><span>⚑</span> Threat alerts <i id="navAlertCount">6</i></a>
+      <a class="nav-link" href="#traffic"><span>⌁</span> Network traffic</a>
+      <a class="nav-link" href="#models"><span>◉</span> ML models</a>
+      <a class="nav-link" href="#devices"><span>▤</span> Devices</a>
+    </nav>
+    <div class="side-bottom"><div class="side-status"><span class="pulse"></span><span><b>All systems operational</b><small>Last model update · 4 min ago</small></span></div><div class="profile"><div class="avatar">JD</div><span><b>Jordan Davis</b><small>Security analyst</small></span><span class="more">···</span></div></div>
+  </aside>
+  <main class="main" id="overview">
+    <header class="topbar"><div class="crumb">Security <span>/</span> Overview</div><div class="top-actions"><span class="live"><i></i> SYNTHETIC DEMO</span><button class="icon-button" id="themeToggle" aria-label="Toggle color theme" title="Toggle theme">◐</button><button class="icon-button" aria-label="Notifications">♧<b class="notification-dot"></b></button><div class="top-avatar">JD</div></div></header>
+    <section class="welcome"><div><div class="eyebrow">THURSDAY, NOVEMBER 27, 2026</div><h1>Good morning, Jordan <span>✳</span></h1><p>Sample activity from the offline anomaly detection demo.</p></div><button id="rangeButton" class="range-button">Last 24 hours <span>⌄</span></button></section>
+    <section class="stats" aria-label="Network summary">
+      <article class="stat-card"><div class="stat-top"><span>THREATS DETECTED</span><span class="stat-icon coral">⌁</span></div><strong id="threatTotal">28</strong><div class="stat-foot"><span class="trend up">↑ 12.5%</span><span> vs. previous 24h</span></div><div class="spark coral-spark"><svg viewBox="0 0 120 30" aria-hidden="true"><path d="M1 23 L15 20 24 24 38 13 48 17 60 9 72 16 82 5 94 12 106 6 119 2"/></svg></div></article>
+      <article class="stat-card"><div class="stat-top"><span>BLOCKED ATTACKS</span><span class="stat-icon green">⬡</span></div><strong id="blockedTotal">24</strong><div class="stat-foot"><span class="trend up">↑ 8.2%</span><span> vs. previous 24h</span></div><div class="spark green-spark"><svg viewBox="0 0 120 30" aria-hidden="true"><path d="M1 24 L14 18 26 21 38 12 50 17 62 10 74 13 86 6 98 11 110 3 119 5"/></svg></div></article>
+      <article class="stat-card"><div class="stat-top"><span>PROTECTED DEVICES</span><span class="stat-icon blue">▣</span></div><strong>1,284</strong><div class="stat-foot"><span class="trend neutral">● 98.7%</span><span> of all devices</span></div><div class="spark blue-spark"><svg viewBox="0 0 120 30" aria-hidden="true"><path d="M1 22 L14 18 26 19 38 11 50 13 62 8 74 12 86 6 98 8 110 3 119 4"/></svg></div></article>
+      <article class="stat-card"><div class="stat-top"><span>MODEL ACCURACY</span><span class="stat-icon violet">◎</span></div><strong>99.2<span class="unit">%</span></strong><div class="stat-foot"><span class="trend up">↑ 0.4%</span><span> this week</span></div><div class="spark violet-spark"><svg viewBox="0 0 120 30" aria-hidden="true"><path d="M1 24 L14 21 26 22 38 14 50 17 62 9 74 14 86 7 98 11 110 4 119 3"/></svg></div></article>
+    </section>
+    <section class="content-grid">
+      <article class="panel traffic-panel" id="traffic"><div class="panel-head"><div><h2>Network activity</h2><p>Traffic volume and detected threats over time</p></div><div class="legend"><span><i class="legend-traffic"></i> Traffic</span><span><i class="legend-threat"></i> Threats</span></div></div><div class="chart"><div class="y-labels"><span>10k</span><span>7.5k</span><span>5k</span><span>2.5k</span><span>0</span></div><div class="chart-area"><div class="gridlines"><i></i><i></i><i></i><i></i><i></i></div><svg viewBox="0 0 700 200" preserveAspectRatio="none" role="img" aria-label="Network traffic and threat activity chart"><defs><linearGradient id="areaFill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#6875ef" stop-opacity=".22"/><stop offset="1" stop-color="#6875ef" stop-opacity="0"/></linearGradient></defs><path class="area" d="M0 140 C35 132 44 121 70 128 S110 105 140 116 S180 91 210 109 S248 78 280 92 S318 76 350 89 S390 47 420 70 S460 93 490 62 S530 74 560 52 S605 62 630 36 S670 50 700 22 V200 H0Z"/><path class="traffic-line" d="M0 140 C35 132 44 121 70 128 S110 105 140 116 S180 91 210 109 S248 78 280 92 S318 76 350 89 S390 47 420 70 S460 93 490 62 S530 74 560 52 S605 62 630 36 S670 50 700 22"/><path class="threat-line" d="M0 177 C45 172 48 164 80 170 S120 150 150 161 S195 146 220 159 S260 133 290 146 S330 136 360 151 S395 118 430 140 S475 130 500 143 S540 113 570 131 S610 119 640 127 S675 100 700 111"/><circle cx="630" cy="36" r="5" class="chart-point"/></svg><div class="x-labels"><span>12 AM</span><span>4 AM</span><span>8 AM</span><span>12 PM</span><span>4 PM</span><span>8 PM</span><span>Now</span></div></div></div><div class="chart-note"><span><i class="pulse"></i> Updating in real time</span><span>Peak traffic <b>8,420 req/min</b></span></div></article>
+      <article class="panel model-panel" id="models"><div class="panel-head"><div><h2>Detection models</h2><p>AI-powered protection status</p></div><button class="text-button" id="modelDetails">View details ↗</button></div><div class="model-list"><div class="model-row"><div class="model-symbol purple">✳</div><div class="model-info"><b>Anomaly detection</b><small>Behavioral analysis</small></div><span class="model-state"><i></i> Active</span></div><div class="model-row"><div class="model-symbol cyan">⌘</div><div class="model-info"><b>Malware classifier</b><small>Deep packet inspection</small></div><span class="model-state"><i></i> Active</span></div><div class="model-row"><div class="model-symbol amber">⌁</div><div class="model-info"><b>Intrusion predictor</b><small>Predictive analysis</small></div><span class="model-state"><i></i> Active</span></div></div><div class="model-health"><div><span>MODEL HEALTH</span><b>Optimal</b></div><div class="health-track"><i></i></div><small>All models running within expected parameters</small></div></article>
+    </section>
+    <section class="panel alerts-panel" id="alerts"><div class="panel-head alerts-head"><div><div class="title-line"><h2>Recent threats</h2><span class="count-pill" id="alertCount">6</span></div><p>Suspicious activity identified by your ML models</p></div><button class="text-button" id="viewAll">View all alerts <span>→</span></button></div><div class="table-wrap"><table><thead><tr><th>THREAT</th><th>SOURCE IP</th><th>DETECTED BY</th><th>SEVERITY</th><th>TIME</th><th></th></tr></thead><tbody id="alertRows"></tbody></table></div><div class="table-footer"><span>Showing <b id="showingCount">4</b> of <b>6</b> alerts</span><button id="loadMore">View all threats <span>→</span></button></div></section>
+    <footer>© 2026 Sentinel ML <span>·</span> Offline demo with synthetic flow data. <span class="footer-right"><i></i> Illustrative demo values</span></footer>
+  </main>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body></html>
+
+
